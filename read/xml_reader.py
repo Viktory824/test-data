@@ -1,17 +1,19 @@
 from lxml import etree
 
-# import xml.etree.ElementTree as ET
-#
-# tree = ET.parse('data/data.xml')
+import dicttoxml
+import xmltodict
+import xml.etree.ElementTree as ET
+
+# tree = ET.parse('../data/data.xml')
 # root = tree.getroot()
-#
+# #
 # for child in root:
 #     print(child.tag, child.attrib)
 #     for _child in child:
 #         print(_child.tag, _child.text)
 
 # -------------------------
-# with open('data/data.xml', 'r') as file:
+# with open('../data/data.xml', 'r') as file:
 #     f = file.read()
 #     new_dct = xmltodict.parse(f"""{f}""", )
 #     print(dict(new_dct))
@@ -25,6 +27,5 @@ from lxml import etree
 root_el = etree.Element('root')
 r = etree.SubElement(root_el, 'root2')
 # r.text = 'test12345'
-# r = root_el.append(etree.Element('root2'))
 etree.SubElement(r, 'child')
 print(etree.tostring(root_el))
